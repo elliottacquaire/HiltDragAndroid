@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mUserInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="120dip"
+        android:background="@color/card_view_background">
+
+        <ImageView
+            android:id="@+id/mAvatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dip"
+            android:layout_marginTop="36dip"
+             />
+
+        <TextView
+            android:id="@+id/mFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="36dip"
+            android:layout_toRightOf="@id/mAvatar"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/mPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mFullName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/mAvatar"
+            android:text=""
+            android:textColor="#999"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/main_tab_bg" />
+
+    <LinearLayout
+        android:id="@+id/lin_manage"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_view_background"
+        android:paddingTop="16dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/lin_persistence"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:id="@+id/persistence"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="已审批暂留"
+                android:textColor="#959595"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myApprovalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               />
+
+            <TextView
+                android:id="@+id/mEntrance1"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="已审批折扣"
+                android:textColor="#959595"
+                android:textSize="12sp"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myApprovalContract"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:id="@+id/mEntrance2"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="已审批合同"
+                android:textColor="#959595"
+                android:textSize="12sp"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_cus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:visibility="gone"
+        android:background="@color/card_view_background"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/lin_test_drive"
+            android:layout_width="0dp"
+            android:layout_height="91dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:id="@+id/drive_history"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="试驾历史"
+                android:textColor="#959595"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_test_record"
+            android:layout_width="0dp"
+            android:layout_height="91dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="路线"
+                android:textColor="#959595"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

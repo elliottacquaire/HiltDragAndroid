@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ProAndroid</string>
+
+
+    <string name="tab_to_do">审批</string>
+    <string name="tab_message">销售数据</string>
+    <string name="tab_drive">试驾</string>
+    <string name="tab_my_profile">我的</string>
+    <string name="tab_to_task">任务</string>
+
+    <string name="title_to_do">待我审批</string>
+    <string name="title_approval_detail">折扣申请审批</string>
+    <string name="title_approval_detail_h">折扣申请详情</string>
+    <string name="title_to_test_drive">待办试乘试驾</string>
+
+    <string name="tab_all">全部</string>
+    <string name="tab_persistence">暂留</string>
+    <string name="tab_price_approval">折扣</string>
+    <string name="tab_contract">合同</string>
+
+
+</resources>

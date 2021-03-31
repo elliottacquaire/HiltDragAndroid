@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/tablayout_bg"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/tab_indicator_color"
+        app:tabIndicatorGravity="bottom"
+        app:tabTextColor="@color/tab_text_color"
+        android:id="@+id/mTabLayout"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_all">
+        </com.google.android.material.tabs.TabItem>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_persistence"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_price_approval">
+        </com.google.android.material.tabs.TabItem>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_contract">
+
+        </com.google.android.material.tabs.TabItem>
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@id/mTabLayout"
+        app:layout_anchorGravity="bottom"
+        android:layout_marginTop="40dip"
+        android:id="@+id/mViewPager"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
