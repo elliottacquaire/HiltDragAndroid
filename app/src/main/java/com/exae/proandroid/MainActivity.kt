@@ -53,7 +53,7 @@ class MainActivity : PosBaseActivity(R.layout.activity_main) {
         viewModel.test()
 
 //        click.setOnClickListener {
-//            viewModel.codeLoginRequest("13811112222","666666")
+            viewModel.codeLoginRequest("13811112222","666666")
 //        }
 
 

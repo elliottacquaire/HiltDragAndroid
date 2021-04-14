@@ -25,6 +25,9 @@ class LaunchActivity : PosBaseActivity(R.layout.activity_launch) {
 
         Logger.d(testBean.toString())
 
+//        startActivity(Intent(this,MainActivity::class.java))
+
+
         butions.setOnClickListener {
 //            startActivity(Intent(this,MainActivity::class.java))
 //            CommonUtils.tt()

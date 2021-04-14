@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <!-- 信任用户安装证书 方便抓包测试、
+            第一种方法：在res目录下新建一个raw文件夹，将手机上安装的证书文件放入res/raw/目录下，证书格式：pem，ca等   <certificates src="@raw/证书文件名"/>
+            第二种方法：certificates src="user"
+            第三种方法：将抓包软件的证书安装成系统证书（需ROOT）
+            -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
+
+<!--charles 抓包-->
+<!--下载charles 安装
+1，界面 proxy -》 proxy setting -》 enable transparent http proxying   -port 8888 可以默认
+2，界面 proxy -》ssl proxy setting -》enable ssl proxying  local add host * ，port *
+3，界面 help -》 ssl proxying -》install charles root certifica 安装完成 双击设为可信任
+4，界面 help -》 ssl proxying -》install charles root certifica on a mobile or romote browle  会弹出 configue on your device to user charles as https ...
+接下来在手机配置（手机端和电脑在同一个局域网  连接相同wifi）
+5，手机 - 设置 - wlan - 当前网络 - 高级设置 - 代理服务器 - 手动 - ip 地址 （网络中可查看），代理端口 8888 保存 ok
+6，打开浏览器，系统自带浏览器坑，可用uc ，输入4步骤中提示的，下载证书，安装，此时安装的为用户级别的证书
+请求后可以在 charles 界面看到很多请求，unknow 显示 android unknow SSL handshake with client failed 证书问题
+接下来对于手机系统7。0以上的，对于证书解决办法 https://blog.csdn.net/qq_34258189/article/details/90444581
+以上，看是否要信任证书
+-->

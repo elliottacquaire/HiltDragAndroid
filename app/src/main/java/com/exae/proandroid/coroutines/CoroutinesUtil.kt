@@ -61,4 +61,16 @@ object CoroutinesUtil {
     fun testSS() : Int{
         return 30
     }
+
+    /**
+     * 我们使用内联修饰符时最常见的场景就是把函数作为另一个函数的参数时(高阶函数)。
+     * 集合或字符串处理(如filter,map或者joinToString)或者一些独立的函数(如repeat)就是很好的例子。
+    这就是为什么inline修饰符经常被库开发人员用来做一些重要优化的原因了。
+    他们应该知道它是如何工作的，哪里还需要被改进以及使用成本是什么。当我们使用函数类型作为参数来定义自己的工具类函数时，
+    我们也需要在项目中使用inline修饰符。当我们没有函数类型作为参数，没有reified实化类型参数并且也不需要非本地返回时，
+    那么我们很可能不应该使用inline修饰符了。这就是为什么我们在非上述情况下使用inline修饰符会在Android Studio或IDEA IntelliJ得到一个警告原因。
+     */
+   inline fun testInline(){
+
+    }
 }
