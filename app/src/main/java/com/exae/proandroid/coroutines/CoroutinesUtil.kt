@@ -27,6 +27,12 @@ import kotlinx.coroutines.delay
     CoroutineStart
     通过 launch{} 等创建一个协程的时候，你也可以传入一个 CoroutineStart 枚举值，这个枚举值参数定义了 CoroutineBuilder 的执行 Coroutine 的时机，具体的时机由以下几种：
 
+    Kotlin 提供了三个调度程序，以用于指定应在何处运行协程：
+
+    Dispatchers.Main - 使用此调度程序可在 Android 主线程上运行协程。此调度程序只能用于与界面交互和执行快速工作。示例包括调用 suspend 函数，运行 Android 界面框架操作，以及更新 LiveData 对象。
+    Dispatchers.IO - 此调度程序经过了专门优化，适合在主线程之外执行磁盘或网络 I/O。示例包括使用 Room 组件、从文件中读取数据或向文件中写入数据，以及运行任何网络操作。
+    Dispatchers.Default - 此调度程序经过了专门优化，适合在主线程之外执行占用大量 CPU 资源的工作。用例示例包括对列表排序和解析 JSON。
+
     DEFAULTE:会根据该 Coroutine 依赖的 Context 立刻执行该 Coroutine
     LAZY:按需执行 Coroutine，仅仅在你调用了 Job.start() 或者 Job.await() 之后会执行
     ATOMIC: 原子操作类型，也就是说会根据依赖的Context 执行 Coroutine，但是该 Coroutine 不可取消。对比 DEFAULT 类型，它不不可取消，不能通过 job.cancel() 去取消的。

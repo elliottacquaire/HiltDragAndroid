@@ -16,6 +16,7 @@ import java.net.UnknownHostException
 import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
 
+//CoroutineExceptionHandler The exception is thrown by a coroutine that automatically throws exceptions (works with launch, not with async)
 fun ViewModel.launch(
     block: suspend CoroutineScope.() -> Unit,
     onError: (e: Throwable) -> Unit = {},
