@@ -3,8 +3,8 @@
     package="com.exae.proandroid">
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序设置内置sd卡的写权限 -->
-<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序访问WiFi网络信息 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".CusApplication"
@@ -15,7 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProAndroid">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/scene_13_menu" />
 
+        <activity android:name=".CoordinatorLayoutActivity" />
+        <activity android:name=".MotionMoreActivity" />
+        <activity android:name=".ShareElementActivity" />
+        <activity android:name=".ConstraintLayoutActivity" />
+        <activity android:name=".MotionTestActivity" />
+        <activity android:name=".MotionActivity" />
         <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
-
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

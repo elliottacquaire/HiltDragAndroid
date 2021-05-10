@@ -29,5 +29,9 @@
 
     <color name="colorWindowBackground">#0E1418</color>
 
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="contentBackground">#FFF</color>
+
 
 </resources>

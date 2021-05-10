@@ -91,6 +91,14 @@ dependencies {
 
     implementation 'org.greenrobot:eventbus:3.1.1'
 
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
 
 
+    //首先添加 Koin Android 基本依赖
+    implementation "org.koin:koin-android:2.2.2"
+    implementation "org.koin:koin-android-viewmodel:2.2.2"
+    //扩展功能
+    implementation "org.koin:koin-androidx-ext:2.2.2"
+    //如果需要使用到 Scope(范围) 控制，则依赖 koin-androidx-scope
+    implementation "org.koin:koin-androidx-scope:2.2.2"
 }

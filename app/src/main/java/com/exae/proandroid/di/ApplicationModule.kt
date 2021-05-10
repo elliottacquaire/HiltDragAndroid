@@ -1,17 +1,17 @@
 package com.exae.proandroid.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.exae.proandroid.BuildConfig
-import com.exae.proandroid.animation.ApiServiceAnno
-import com.exae.proandroid.animation.OkHttpAnnotation
-import com.exae.proandroid.animation.RetrofitAnno
-import com.exae.proandroid.animation.RetrofitAnnoOther
+import com.exae.proandroid.animation.*
 import com.exae.proandroid.api.NetwrokService
 import com.exae.proandroid.bean.TestBean
 import com.exae.proandroid.bean.TestData
 import com.exae.proandroid.common.Constants.URL_SERVICE
+import com.exae.proandroid.common.ShareUtil
+import com.orhanobut.logger.Logger
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,6 +33,30 @@ object ApplicationModule {
     fun provideInt(): Int {
         return 1
     }
+
+
+//    @Provides
+//    fun getToken() : String{
+//        return "tokens"
+//    }
+
+    @Provides
+    @Singleton
+    fun getSharepe(@ApplicationContext context: Context) : SharedPreferences{
+        return ShareUtil.getShareper(context)
+    }
+
+    @TokenAnno
+    @Provides
+    fun getToken(share : SharedPreferences) : String{
+        return share.getString("token","")?:""
+    }
+
+//    @Provides
+//    fun setToken(key : String,value : String,share : SharedPreferences){
+//        Logger.d("----$key----$value")
+//        share.edit().putString(key, value).apply()
+//    }
 
     @Provides
     @Singleton //单例

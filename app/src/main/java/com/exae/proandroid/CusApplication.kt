@@ -11,6 +11,7 @@ import dagger.hilt.android.HiltAndroidApp
 class CusApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        instance = this
         Logger.addLogAdapter(AndroidLogAdapter())
         initRouter()
     }
@@ -21,5 +22,11 @@ class CusApplication : Application() {
             ARouter.openDebug() // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
         ARouter.init(this)
+    }
+
+    companion object {
+        private lateinit var instance: CusApplication
+        fun instance() = instance
+
     }
 }

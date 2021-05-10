@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--
+app:layoutDescription=”reference” 指定你需要绑定的MotionScene XML 文件
+app:applyMotionScene=”boolean” 是否启用MotionScene，默认是true
+app:showPaths=”boolean” debug模式比较有用的模式，可以显示动画运动的路径
+app:progress=”float” 指定转换的完成度 范围是0 - 1
+app:currentState=”reference” 强制指定特定的ConstraintSet
+-->
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="2000">
+       <KeyFrameSet>
+           <!-- <KeyPosition>标签表示在这个点需要做什么;
+                     framePosition最大值100,表示动画执行的进度;
+                     keyPositionType表示坐标系,也就是原点的位置;-->
+           <KeyPosition
+               app:framePosition="20"
+               app:motionTarget="@id/bt_start"
+               app:keyPositionType="parentRelative"
+               app:percentX="1"
+               app:percentY="0.5"/>
+           <KeyPosition
+               app:framePosition="40"
+               app:motionTarget="@id/bt_start"
+               app:keyPositionType="parentRelative"
+               app:percentX="0.5"
+               app:percentY="0.75"/>
+           <KeyPosition
+               app:framePosition="60"
+               app:motionTarget="@id/bt_start"
+               app:keyPositionType="parentRelative"
+               app:percentX="0"
+               app:percentY="0.5"/>
+           <KeyPosition
+               app:framePosition="70"
+               app:motionTarget="@id/bt_start"
+               app:keyPositionType="parentRelative"
+               app:percentX="0.25"
+               app:percentY="0.4"/>
+           <KeyPosition
+               app:framePosition="80"
+               app:motionTarget="@id/bt_start"
+               app:keyPositionType="parentRelative"
+               app:percentX="0.5"
+               app:percentY="0.5"/>
+
+           <!--前半段的动画效果：逆时针旋转一圈，同时放大一倍-->
+           <KeyAttribute
+               app:motionTarget="@id/bt_start"
+               android:rotation="-3600"
+               android:scaleX="2.0"
+               android:scaleY="2.0"
+               app:framePosition="50"/>
+           <!--后半段的动画效果：逆时针旋转一圈，同时变回原样-->
+           <KeyAttribute
+               app:motionTarget="@id/bt_start"
+               android:rotation="-7200"
+               app:framePosition="100"/>
+
+       </KeyFrameSet>
+<!--        点击imageButton，imageButton在start状态和end状态来回切换，这是因为默认的motion:clickAction是toggle，即来回切换。它有5个值：
+toggle：来回切换
+jumpToStart：瞬间跳转到start状态，没有动画
+jumpToEnd：瞬间跳转到end状态，没有动画
+transitionToStart：动画过渡到start状态
+transitionToEnd：动画过渡到end状态
+接下来我们设置为transitionToEnd，这样点击的效果就是：如果当前是start状态，会过渡到end状态，如果当前是end状态，点击没有效果。
+-->
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/bt_start"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <!--  此文件中 view 的属性优先级比布局文件中高      -->
+        <Constraint
+            android:id="@id/bt_start"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Constraint>
+    </ConstraintSet>
+    <!-- Constraints to apply at the end of the animation -->
+    <ConstraintSet android:id="@+id/end">
+        <!--this view end point should be at bottom of parent-->
+        <Constraint
+            android:id="@id/bt_start"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
